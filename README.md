@@ -7,24 +7,40 @@ sys_xdedup.c (kernel space code)
 
 ## User Space:
 The user level code throws error:
+
 if unrecognized flags are supplied
-if the given input files do not exist 
+
+if the given input files do not exist
+
 We don’t have the permission to read the two input files
+
 insufficient no of arguments are supplied
+
 extra arguments are supplied
 
 ## Kernel Space:
 asmlinkage long xdedup(void *arg)  function:
+
 The arguments received from the user space are  copied to a memory allocated in the kernel space and the DFLAG for the debugging option is enabled
+
 Initially the following checks are performed:
+
 if the required arguments supplied are NULL
+
 if we can access the given input files and if they have read permissions
+
 If the supplied files are directories or are not regular
+
 In the case when user has not supplied -p option, if the owners of the files are different or if the two files differ in size (return error in these cases)
+
 If the output file supplied is hardlinked to one of the input files (return error)
+
 If the two input files are hardlinked to each other:
+
 If -n option is given we return the size of one of the files
+
 If -p option is given and -n is not given the data from one of the files is written onto the output file [called function partialData()]
+
 If no flag supplied return error
 
 ### P and N
