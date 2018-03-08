@@ -37,7 +37,7 @@ If no flag supplied return error
 	If the user has not supplied -p or -n, completeFileRead() function is called which compares data byte and byte. If the two files are entirely similar, file2 is unlinked and then linked to file1. Incase the data of file1 does not match the data of file2 entirely, -1 is returned.
 
 ### !P and N
-		If the data in both the files is entirely same, the two given files are not linked, only the size of the files is returned.
+	If the data in both the files is entirely same, the two given files are not linked, only the size of the files is returned.
 
 ### D
 	If D flag is given the debugging statements will be printed in the console.
